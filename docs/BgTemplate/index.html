@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bgTemplate</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="header">
+		<h1><span class="fa fa-wrench"></span>bgTemplate sample</h1>
+	</div>
+	<div class="wrapper" id="bgWrapper">
+		<div class="contents">
+			<h3>図柄と好きな色を組み合わせてオリジナルの壁紙が作成出来ます。</h3>
+		</div>
+		<div class="textureWrap">
+			<p><span class="step">Step1</span>好きな柄のサムネイルをクリックして下さい</p>
+			<div class="textureListWrap">
+				<ul class="cFix">
+					<li><a href="img/back.png"><img src="img/back.png" width="100" /></a></li>
+					<li><a href="img/back2.png"><img src="img/back2.png" width="100" /></a></li>
+					<li><a href="img/back3.png"><img src="img/back3.png" width="100" /></a></li>
+					<li><a href="img/back5.png"><img src="img/back5.png" width="100" /></a></li>
+					<li><a href="img/back8.png"><img src="img/back8.png" width="100" /></a></li>
+					<li><a href="img/back9.png"><img src="img/back9.png" width="100" /></a></li>
+					<li><a href="img/back13.png"><img src="img/back13.png" width="100" /></a></li>
+					<li><a href="img/back12.png"><img src="img/back12.png" width="100" /></a></li>
+					<li><a href="img/back7.png"><img src="img/back7.png" width="100" /></a></li>
+					<li><a href="img/back11.png"><img src="img/back11.png" width="100" /></a></li>
+					<li><a href="img/back10.png"><img src="img/back10.png" width="100" /></a></li>
+					<li><a href="img/back14.png"><img src="img/back14.png" width="100" /></a></li>
+					<li><a href="img/back15.png"><img src="img/back15.png" width="100" /></a></li>
+					<li><a href="img/back16.png"><img src="img/back16.png" width="100" /></a></li>
+					<li><a href="img/back17.png"><img src="img/back17.png" width="100" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="colorWrap">
+			<p><span class="step">Step2</span>図柄に合わせたい色を選らんで下さい。</p>
+			<div class="cubeWrap">
+				<ul class="colorCube cFix">
+					<li class="color1"><a href="#4689FF"></a></li>
+					<li class="color2"><a href="#5D99FF"></a></li>
+					<li class="color3"><a href="#75A9FF"></a></li>
+					<li class="color4"><a href="#8EB8FF"></a></li>
+					<li class="color5"><a href="#BAD3FF"></a></li>
+					<li class="color6"><a href="#FF367F"></a></li>
+					<li class="color7"><a href="#FF5192"></a></li>
+					<li class="color8"><a href="#FF69A3"></a></li>
+					<li class="color9"><a href="#FF82B2"></a></li>
+					<li class="color10"><a href="#FFBEDA"></a></li>
+					<li class="color11"><a href="#FF4F02"></a></li>
+					<li class="color12"><a href="#FF5F17"></a></li>
+					<li class="color13"><a href="#FF6928"></a></li>
+					<li class="color14"><a href="#FF8856"></a></li>
+					<li class="color15"><a href="#FFAD90"></a></li>
+					<li class="color16"><a href="#000000"></a></li>
+					<li class="color17"><a href="#FFFFFF"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	var getColor = function() {
+		var $colorThumb = $('#bgWrapper a'),
+		$body = $('body'),
+		change = function($this, event) {
+				event.preventDefault();
+				var bgLink = $this.attr('href');
+				if(bgLink.indexOf('img') !== -1) {
+					$body.css('background-image', 'url(' + bgLink + ')');
+				} else {
+					$body.css('background-color', bgLink);
+				}
+		};
+			$colorThumb.on('click', function(e){
+				change($(this), e);
+			});
+	};
+	getColor();
+</script>
+</body>
+</html>
