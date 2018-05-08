@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>My Vue App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="app" class="todoList">
+        <h1 class="todoList__ttl">
+            <button class="todoList__ttl__allDelete" @click="allDelete">完了タスクを一括削除</button>
+            todoList
+            <span class="todoList__ttl__info">{{ remaining.length }}/{{ todos.length }}</span>
+        </h1>
+        <ul class="todoList__itemWrap">
+            <li v-for="(todo, index) in todos" class="todoList__listItem">
+                <input type="checkbox" v-model="todo.isDone">
+                <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+                <span @click="deleteItem(index)" class="todoList__listItem__delete">[x]</span>
+            </li>
+            <li v-show="!todos.length">タスクを登録して下さい</li>
+        </ul>
+        <form @submit.prevent="addItem">
+            <input type="text" v-model="newItem" class="todoList__newItem">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
